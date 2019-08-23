@@ -286,7 +286,7 @@ var defaultBaseSettings = {
     notes: ""
   },
   render_rotated_skewed_text_as: {
-    defaultValue: "image",
+    defaultValue: "html",
     includeInSettingsBlock: true,
     includeInConfigFile: false,
     useQuoteMarksInConfigFile: false,
@@ -415,13 +415,18 @@ var fonts = [
 {"aifont":"GothamNarrow-Book","family":"'Gotham Narrow', helvetica, sans-serif","weight":"400","style":""},
 {"aifont":"GothamNarrowSSm-Book","family":"'Gotham Narrow SSm', helvetica, sans-serif","weight":"400","style":""},
 {"aifont":"GothamNarrowSSm-Bold","family":"'Gotham Narrow SSm', helvetica, sans-serif","weight":"700","style":""},
+{"aifont":"GothamNarrowSSm-Medium", "family":"Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif","weight":"500","style":""},
 {"aifont":"GothamNarrowSSm-BoldItalic","family":"'Gotham Narrow SSm', helvetica, sans-serif","weight":"700","style":""},
+{"aifont":"GothamNarrowSSm-Light", "family":"Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif","weight":"100","style":""},
 {"aifont":"GothamNarrowSSm-BookItalic","family":"'Gotham Narrow SSm', helvetica, sans-serif","weight":"400","style":""},
 {"aifont":"GothamNarrowSSm-Black","family":"'Gotham Narrow SSm', helvetica, sans-serif","weight":"400","style":""},
 {"aifont":"GothamNarrow-Bold","family":"'Gotham Narrow', helvetica, sans-serif","weight":"700","style":""},
+{"aifont":"GothamNarrow-BoldItalic", "family":"Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif","weight":"bold","style":"italic"},
+{"aifont":"GothamNarrow-Light", "family":"Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif","weight":"100","style":""},
 {"aifont":"GothamXNarrow-Book","family":"'Gotham XNarrow', helvetica, sans-serif","weight":"400","style":""},
 {"aifont":"GothamNarrow-BookItalic","family":"'Gotham Narrow', helvetica, sans-serif","weight":"400","style":""},
 {"aifont":"GothamXNarrow-Black","family":"'Gotham XNarrow', helvetica, sans-serif","weight":"400","style":""},
+{"aifont":"GothamXNarrow-Bold", "family":"Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif","weight":"900","style":""},
 ];
 
 // CSS text-transform equivalents
@@ -1612,7 +1617,7 @@ function showCompletionAlert(showPrompt) {
   alertText += makeList(feedback, "Information", "Information");
   alertText += "\n";
   if (showPrompt) {
-    alertText += rule + "Generate promo image?";
+    alertText += rule + "Generate mobile image?";
     // confirm(<msg>, false) makes "Yes" the default (at Baden's request).
     makePromo = confirm(alertHed  + alertText, false);
   } else {
@@ -4111,6 +4116,8 @@ function generateOutputHtml(content, pageName, settings) {
   if (settings.local_preview_template !== "") {
     // TODO: may have missed a condition, need to compare with original version
     var previewFileDestination = htmlFileDestinationFolder + pageName + ".preview.html";
+    // Inquirer implementation needs preview to save as index.html
+    ///var previewFileDestination = htmlFileDestinationFolder + "index.html";
     outputLocalPreviewPage(textForFile, previewFileDestination, settings);
   }
 }
