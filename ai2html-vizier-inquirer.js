@@ -4115,9 +4115,10 @@ function generateOutputHtml(content, pageName, settings) {
   // process local preview template if appropriate
   if (settings.local_preview_template !== "") {
     // TODO: may have missed a condition, need to compare with original version
-    var previewFileDestination = htmlFileDestinationFolder + pageName + ".preview.html";
+    //var previewFileDestination = htmlFileDestinationFolder + pageName + ".preview.html";
+
     // Inquirer implementation needs preview to save as index.html
-    ///var previewFileDestination = htmlFileDestinationFolder + "index.html";
+    var previewFileDestination = htmlFileDestinationFolder + "index.html";
     outputLocalPreviewPage(textForFile, previewFileDestination, settings);
   }
 }
