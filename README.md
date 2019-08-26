@@ -1,5 +1,18 @@
 # Vizier
 
+### Inquirer Edition
+
+This is the Inquirer version of [Vox's Vizier](https://github.com/voxmedia/viz-app).
+
+Changes:
+* Uses our template.ai file, with some Inquirer-based settings.
+* When starting a new project, copy over an Inquirer HTML template for ai2html.
+* Explicitly include 'index.html' in the embed code URLs.
+
+Our downloads are [located in our own repository](https://github.com/phillymedia/viz-app/releases). Otherwise, follow Vox's original README below:
+
+### Vox's README:
+
 A GUI for ai2html projects. Vizier makes it easy to use the [New York Times' ai2html plugin for Adobe Illustrator](http://ai2html.org/).
 
 <img src="https://apps.voxmedia.com/vizapp-screenshots/main.png" width="383" alt="Screenshot of the main UI window" />
