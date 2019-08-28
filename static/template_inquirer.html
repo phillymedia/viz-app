@@ -67,6 +67,7 @@
 
   .clear {
     clear: both;
+    display: none;
   }
 
   .axislabel {
@@ -92,8 +93,8 @@
 </style>
 
 <div class="graphicWrapper {{border}}">
-  <h3 class="heading">{{ headline }}</h3>
-  <p class="description">{{ leadin }}</p>
+  <h3 id="heading" class="heading">{{ headline }}</h3>
+  <p id="description" class="description">{{ leadin }}</p>
   <div class="g-graphicPartial">
     {{ ai2htmlPartial }}
     <div class="mobileImage">
@@ -104,3 +105,12 @@
     <div id="clears" class="clear"></div>
   </div>
 </div>
+
+<script>
+function hideIfEmpty(id) {
+  if (document.getElementById(id).innerHTML == '') {
+    document.getElementById(id).style.display = 'none';
+  }
+}
+['heading', 'description', 'sources', 'credits'].forEach(hideIfEmpty);
+</script>

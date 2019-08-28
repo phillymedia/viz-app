@@ -8,6 +8,7 @@ Changes:
 * Uses our template.ai file, with some Inquirer-based settings.
 * When starting a new project, copy over an Inquirer HTML template for ai2html.
 * Explicitly include 'index.html' in the embed code URLs.
+* Included our custom ai2html script as `ai2html-vizier-inquirer.js`. Main change is using the above HTML template when ai2html generates its index.html file. (Normally the template is only used when creating a preview HTML file.)
 
 Our downloads are [located in our own repository](https://github.com/phillymedia/viz-app/releases). Otherwise, follow Vox's original README below:
 
